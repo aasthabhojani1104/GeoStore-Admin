@@ -1,0 +1,102 @@
+﻿@model Country_Store.Models.StoreModel
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h4 class="text-center text-primary mb-4">@ViewBag.Title</h4>
+
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-success text-center" id="tempMessage">
+                            @TempData["Message"]
+                        </div>
+                    }
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger text-center">
+                            @TempData["Error"]
+                        </div>
+                    }
+
+                    <form asp-action="AddOrEditStore" asp-controller="Admin" method="post">
+                        <input type="hidden" asp-for="StoreId" />
+
+                        <div class="mb-3">
+                            <label asp-for="StoreName" class="form-label">Store Name</label>
+                            <input asp-for="StoreName" class="form-control shadow-sm" placeholder="Enter store name" />
+                            <span asp-validation-for="StoreName" class="text-danger"></span>
+                        </div>
+                       
+
+                      
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="OpeningTime" class="form-label">Opening Time</label>
+                                <input asp-for="OpeningTime" class="form-control shadow-sm" type="time"
+                                       value="@Model.OpeningTime.ToString(@"hh\:mm")" />
+
+                               
+                                <span asp-validation-for="OpeningTime" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ClosingTime" class="form-label">Closing Time</label>
+                                <input asp-for="ClosingTime" class="form-control shadow-sm" type="time"
+                                       value="@Model.ClosingTime.ToString(@"hh\:mm")" />                              
+                                       <span asp-validation-for="ClosingTime" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CountryId" class="form-label">Country</label>
+                            <select asp-for="CountryId" class="form-control shadow-sm" asp-items="ViewBag.CountryList" id="CountryId">
+                                <option value="">-- Select Country --</option>
+                            </select>
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="StateId" class="form-label">State</label>
+                            <select asp-for="StateId" class="form-control shadow-sm" asp-items="ViewBag.StateList" id="StateId">
+                                <option value="">-- Select State --</option>
+                            </select>
+                            <span asp-validation-for="StateId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CityId" class="form-label">City</label>
+                            <select asp-for="CityId" class="form-control shadow-sm" asp-items="ViewBag.CityList" id="CityId">
+                                <option value="">-- Select City --</option>
+                            </select>
+                            <span asp-validation-for="CityId" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="bi bi-save"></i> Save
+                            </button>
+                            <button type="button" class="btn btn-secondary px-4" onclick="reloadStoreTab()">
+                                <i class="bi bi-x-circle"></i> Cancel
+                                </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        setTimeout(() => {
+            const message = document.getElementById("tempMessage");
+            if (message) message.style.display = "none";
+        }, 3000); // 3 seconds
+    </script>
+
+
+
+}

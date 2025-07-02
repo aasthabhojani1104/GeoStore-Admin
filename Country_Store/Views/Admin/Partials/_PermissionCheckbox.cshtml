@@ -1,0 +1,49 @@
+﻿@model Country_Store.Models.PermissionModel
+
+<form asp-action="Manage" asp-controller="Permission" method="post">
+    <input type="hidden" asp-for="SelectedUserId" />
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary mb-3">📋 Set Permissions</h5>
+
+                    <div class="form-check mb-2">
+                        <input asp-for="AdminAccess" class="form-check-input" />
+                        <label asp-for="AdminAccess" class="form-check-label">Admin</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input asp-for="CountryAccess" class="form-check-input" />
+                        <label asp-for="CountryAccess" class="form-check-label">Country</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input asp-for="StateAccess" class="form-check-input" />
+                        <label asp-for="StateAccess" class="form-check-label">State</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input asp-for="CityAccess" class="form-check-input" />
+                        <label asp-for="CityAccess" class="form-check-label">City</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input asp-for="StoreAccess" class="form-check-input" />
+                        <label asp-for="StoreAccess" class="form-check-label">Store</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input asp-for="UserAccess" class="form-check-input" />
+                        <label asp-for="UserAccess" class="form-check-label">User</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="row mt-4">
+        <div class="col text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-4 py-2 shadow">
+                💾 Save Permissions
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Country_Store.Models.CityModel>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mt-2 text-center" id="tempMessage" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="text-primary mb-0">🏙️ City List</h3>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center align-middle shadow-sm">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>#</th>
+                            <th>City Name</th>
+                            <th>Pin Code</th>
+                            <th>Population</th>
+                            <th>State</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            int i = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@item.CityName</td>
+                                    <td>@item.PinCode</td>
+                                    <td>@item.Population</td>
+                                    <td>@item.StateName</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="reloadCityForm(@item.CityId)">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <a asp-controller="Admin" asp-action="DeleteCity" asp-route-id="@item.CityId" class="btn btn-sm btn-outline-danger"
+                                           onclick="return confirm('Are you sure you want to delete this city?');">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-muted">No cities found.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        setTimeout(() => {
+            const message = document.getElementById("tempMessage");
+            if (message) message.style.display = "none";
+        }, 3000); // 3 seconds
+    </script>
+
+
+}

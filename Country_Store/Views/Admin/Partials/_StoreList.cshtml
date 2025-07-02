@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Country_Store.Models.StoreModel>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mt-2 text-center" id="tempMessage" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="text-primary mb-0">🏪 Store List</h3>
+               
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center align-middle shadow-sm">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>#</th>
+                            <th>Store Name</th>
+                            <th>Opening Time</th>
+                            <th>Closing Time</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            int i = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@item.StoreName</td>
+                                    <td>@item.OpeningTime</td>
+                                    <td>@item.ClosingTime</td>
+                                    <td>@item.CountryName</td>
+                                    <td>@item.StateName</td>
+                                    <td>@item.CityName</td>
+                                    <td>
+                                       
+                                        <button type="button" class="btn btn-sm btn-outline-primary me-1" onclick="reloadStoreForm(@item.StoreId)" title="Edit">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </button>
+
+                                        <a asp-controller="Admin" asp-action="DeleteStore" asp-route-id="@item.StoreId" class="btn btn-sm btn-outline-danger"
+                                           onclick="return confirm('Are you sure you want to delete this store?');">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8" class="text-muted">No stores found.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        setTimeout(() => {
+            const message = document.getElementById("tempMessage");
+            if (message) message.style.display = "none";
+        }, 3000); // 3 seconds
+    </script>
+
+}

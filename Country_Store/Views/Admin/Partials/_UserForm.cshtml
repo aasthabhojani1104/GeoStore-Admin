@@ -1,0 +1,96 @@
+﻿@model Country_Store.Models.UserModel
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h4 class="text-center text-primary mb-4">@ViewBag.Title</h4>
+
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                            @TempData["Error"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form id="userForm" asp-action="AddOrEditUser" asp-controller="User" method="post">
+                        <input type="hidden" asp-for="UserId" />
+
+                        <div class="mb-3">
+                            <label asp-for="Username" class="form-label">Username</label>
+                            <input asp-for="Username" class="form-control shadow-sm" placeholder="Enter username" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control shadow-sm" placeholder="Enter password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FullName" class="form-label">Full Name</label>
+                            <input asp-for="FullName" class="form-control shadow-sm" placeholder="Enter full name" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Role" class="form-label">Role</label>
+                            @Html.DropDownListFor(model => model.Role,
+                            new SelectList(new[] { "Admin", "User" }),
+                                                        "-- Select Role --",
+                                                        new { @class = "form-control shadow-sm" })
+                            <span asp-validation-for="Role" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input asp-for="IsActive" class="form-check-input" />
+                            <label asp-for="IsActive" class="form-check-label">Active</label>
+                        </div>
+
+                        <!-- ✅ Permission Checkboxes -->
+                        <div class="border p-3 bg-light rounded mb-3">
+                            <label class="form-label fw-bold text-secondary">Permissions</label>
+
+                            <div class="form-check">
+                                <input asp-for="AdminAccess" class="form-check-input" />
+                                <label class="form-check-label" asp-for="AdminAccess">Admin</label>
+                            </div>
+                            <div class="form-check">
+                                <input asp-for="CountryAccess" class="form-check-input" />
+                                <label class="form-check-label" asp-for="CountryAccess">Country</label>
+                            </div>
+                            <div class="form-check">
+                                <input asp-for="StateAccess" class="form-check-input" />
+                                <label class="form-check-label" asp-for="StateAccess">State</label>
+                            </div>
+                            <div class="form-check">
+                                <input asp-for="CityAccess" class="form-check-input" />
+                                <label class="form-check-label" asp-for="CityAccess">City</label>
+                            </div>
+                            <div class="form-check">
+                                <input asp-for="StoreAccess" class="form-check-input" />
+                                <label class="form-check-label" asp-for="StoreAccess">Store</label>
+                            </div>
+                            <div class="form-check">
+                                <input asp-for="UserAccess" class="form-check-input" />
+                                <label class="form-check-label" asp-for="UserAccess">User</label>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="bi bi-save"></i> Save
+                            </button>
+                            <button type="button" class="btn btn-secondary px-4" onclick="reloadUserTab()">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

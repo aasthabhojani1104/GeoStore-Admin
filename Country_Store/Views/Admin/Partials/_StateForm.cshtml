@@ -1,0 +1,79 @@
+﻿@model Country_Store.Models.StateModel
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h4 class="text-center text-primary mb-4">@ViewBag.Title</h4>
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                            @TempData["Error"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-action="AddOrEditState" asp-controller="Admin" method="post">
+                        <input type="hidden" asp-for="StateId" />
+
+                        <div class="mb-3">
+                            <label asp-for="StateName" class="form-label"></label>
+                            <input asp-for="StateName" class="form-control shadow-sm" placeholder="Enter state name" />
+                            <span asp-validation-for="StateName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Capital" class="form-label"></label>
+                            <input asp-for="Capital" class="form-control shadow-sm" placeholder="Enter capital" />
+                            <span asp-validation-for="Capital" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Language" class="form-label"></label>
+                            <input asp-for="Language" class="form-control shadow-sm" placeholder="Enter official language" />
+                            <span asp-validation-for="Language" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CountryId" class="form-label"></label>
+                            <select asp-for="CountryId"
+                                    asp-items="@(new SelectList(ViewBag.CountryList, "CountryId", "CountryName", Model.CountryId))"
+                                    class="form-control shadow-sm">
+                                <option value="">-- Select Country --</option>
+                            </select>
+
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="bi bi-save"></i> Save
+                            </button>
+                            <a asp-action="State" asp-controller="Admin" class="btn btn-secondary px-4">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        setTimeout(() => {
+            const message = document.getElementById("tempMessage");
+            if (message) message.style.display = "none";
+        }, 3000); // 3 seconds
+    </script>
+
+
+    
+}
+
+
+

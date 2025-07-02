@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Country_Store.Models.StoreModel>
+
+@{
+    ViewBag.Title = "Store List";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div id="tempMessage" class="alert alert-success text-center">
+        @TempData["Message"]
+    </div>
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="text-primary">Store List</h2>
+               @*  <a asp-action="AddOrEdit" class="btn btn-success">
+                    <i class="bi bi-plus-lg"></i> Add New Store
+                </a> *@
+            </div>
+
+            <table class="table table-bordered table-striped table-hover shadow-sm">
+                <thead class="table-primary text-center">
+                    <tr>
+                        <th>#</th>
+                        <th>Store Name</th>
+                        <th>Opening Time</th>
+                        <th>Closing Time</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        int i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@i</td>
+                                <td>@item.StoreName</td>
+                                <td>@item.OpeningTime</td>
+                                <td>@item.ClosingTime</td>
+                                <td>@item.CountryName</td>
+                                <td>@item.StateName</td>
+                                <td>@item.CityName</td>
+                              @*   <td class="text-center">
+                                    <a asp-action="AddOrEdit" asp-route-id="@item.StoreId" class="btn btn-sm btn-primary me-2">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.StoreId" class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Are you sure you want to delete this store?');">
+                                        <i class="bi bi-trash3"></i> Delete
+                                    </a>
+                                </td> *@
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center text-muted">No stores found.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        setTimeout(function () {
+            var msg = document.getElementById("tempMessage");
+            if (msg) {
+                msg.style.transition = "opacity 0.5s ease-out";
+                msg.style.opacity = "0";
+                setTimeout(() => msg.style.display = "none", 500);
+            }
+        }, 3000);
+    </script>
+}
+

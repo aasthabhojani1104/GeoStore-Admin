@@ -1,0 +1,191 @@
+﻿@{
+    ViewBag.Title = "Admin Panel";
+}
+
+<div class="container mt-4">
+    <h2>Admin Panel</h2>
+
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+            <a class="nav-link inner-tab active" data-tab="Country" href="#">Country</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link inner-tab" data-tab="State" href="#">State</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link inner-tab" data-tab="City" href="#">City</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link inner-tab" data-tab="Store" href="#">Store</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link inner-tab" data-tab="User" href="#">User</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link inner-tab" data-tab="Permission" href="#">Permission</a>
+        </li>
+    </ul>
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["Message"]</div>
+    }
+
+
+    <div id="tempMessage">@TempData["Message"]</div>
+
+    <div class="row mt-3">
+        <div class="col-md-5" id="formArea">
+            <!-- Form will be loaded here -->
+        </div>
+        <div class="col-md-7" id="listArea">
+            <!-- List will be loaded here -->
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        
+        setTimeout(() => {
+            $('#tempMessage').fadeOut('slow');
+        }, 3000);
+
+               function loadTabContent(tab) {
+            // Call the new route: /admin/loadform/{tab}
+            $.get(`/admin/loadform/${tab}`, function (formHtml) {
+                $('#formArea').html(formHtml);
+            });
+
+            if (tab !== 'Permission') {
+                // Call the new route: /admin/loadlist/{tab}
+                $.get(`/admin/loadlist/${tab}`, function (listHtml) {
+                    $('#listArea').html(listHtml);
+                });
+            } else {
+                $('#listArea').html('');
+            }
+        }
+
+        // Handle tab click
+        $(document).on('click', '.nav-link.inner-tab', function (e) {
+            e.preventDefault();
+            $('.nav-link.inner-tab').removeClass('active');
+            $(this).addClass('active');
+
+            const tab = $(this).data('tab');
+            localStorage.setItem('lastTab', tab);
+            loadTabContent(tab);
+        });
+
+        // On page load
+        $(document).ready(function () {
+            const validTabs = ['Country', 'State', 'City', 'Store', 'User', 'Permission'];
+
+            let lastTab = '@TempData["ResetTab"]' || localStorage.getItem('lastTab') || 'Country';
+            if (!validTabs.includes(lastTab)) {
+                lastTab = 'Country';
+            }
+
+            $('.nav-link.inner-tab').removeClass('active');
+            $(`.nav-link.inner-tab[data-tab="${lastTab}"]`).addClass('active');
+
+            loadTabContent(lastTab);
+        });
+
+        // --- COUNTRY ---
+        function reloadCountryForm(id) {
+            $.get('/Admin/GetCountryByID', { id: id }, function (data) {
+                $('#formArea').html(data);
+            });
+        }
+
+        function reloadCountryTab() {
+            loadTabContent('Country');
+        }
+
+        // --- STATE ---
+        function reloadStateForm(id) {
+            $.get('/Admin/GetStateByID', { id: id }, function (data) {
+                $('#formArea').html(data);
+                  $('#formArea').html(data);
+            });
+        }
+
+        function reloadStateTab() {
+            loadTabContent('State');
+        }
+
+        // --- CITY ---
+        function reloadCityForm(id) {
+            $.get('/Admin/GetIdByCity', { id: id }, function (data) {
+                $('#formArea').html(data);
+                  $('#formArea').html(data);
+            });
+        }
+
+        function reloadCityTab() {
+            loadTabContent('City');
+        }
+
+        // --- STORE ---
+        function reloadStoreForm(id) {
+            $.get('/Admin/GetStoreById', { id: id }, function (data) {
+                $('#formArea').html(data);
+                  $('#formArea').html(data);
+            });
+        }
+
+        function reloadStoreTab() {
+            loadTabContent('Store');
+        }
+        
+        // --- USER ---
+             function reloadUserForm(id) {
+            $.get('@Url.Action("GetUserByID", "User")', { id: id }, function (data) {
+                $('#formArea').html(data);
+            }).fail(function () {
+                alert('Failed to load user form.');
+            });
+        }
+        function reloadUserTab() {
+            $.get('/User/LoadTab?tab=User', function (formHtml) {
+                $('#formArea').html(formHtml);
+            });
+
+            $.get('/User/LoadList?tab=User', function (listHtml) {
+                $('#listArea').html(listHtml);
+            });
+        }
+
+       
+        // --- PERMISSION USER DROPDOWN CHANGE HANDLER ---
+        $(document).on('change', '#SelectedUserId', function () {
+            var userId = $(this).val();
+            if (userId) {
+                $.get('/Permission/Manage', { userId: userId }, function (formHtml) {
+                    $('#formArea').html(formHtml);
+                });
+            }
+        });
+                               $(document).on('change', '#SelectedUserId', function () {
+            var userId = $(this).val();
+            if (userId) {
+                $.get('/Permission/Manage', { userId: userId }, function (formHtml) {
+                    $('#permissionFormContainer').html(formHtml);
+                }).fail(function (xhr) {
+                    alert("Error loading permissions: " + xhr.responseText);
+                });
+            } else {
+                $('#permissionFormContainer').html('');
+            }
+        });
+
+
+
+
+    </script>
+}
+
+
+

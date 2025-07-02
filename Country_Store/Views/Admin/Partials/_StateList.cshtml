@@ -1,0 +1,90 @@
+﻿@model List<Country_Store.Models.StateModel>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mt-2 text-center" id="tempMessage" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="errorMessage" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="text-primary mb-0">🏙️ State List</h3>
+               
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center align-middle shadow-sm">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>#</th>
+                            <th>State Name</th>
+                            <th>Capital</th>
+                            <th>Language</th>
+                            <th>Country</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            int i = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@item.StateName</td>
+                                    <td>@item.Capital</td>
+                                    <td>@item.Language</td>
+                                    <td>@item.CountryName</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="reloadStateForm(@item.StateId)">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+
+                                        <a asp-controller="Admin" asp-action="DeleteState" asp-route-id="@item.StateId" class="btn btn-sm btn-outline-danger"
+                                           onclick="return confirm('Are you sure you want to delete this state?');">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+
+
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-muted">No states found.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        setTimeout(() => {
+            const message = document.getElementById("tempMessage");
+            if (message) message.style.display = "none";
+        }, 3000); // 3 seconds
+    </script>
+
+}
+

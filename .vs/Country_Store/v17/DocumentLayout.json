@@ -1,0 +1,873 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\home\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\home\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\permissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\permissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\permission\\permissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\permission\\permissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\statecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\statecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\attributes\\permissionauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\attributes\\permissionauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\admin\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\admin\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_userform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_userform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_storelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_storelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_permissionform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_permissionform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_permissioncheckbox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_permissioncheckbox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\models\\permissionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\models\\permissionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\country\\countryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\country\\countryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\permission\\ipermissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\permission\\ipermissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_countrylist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_countrylist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_statelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_statelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_storeform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_storeform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_stateform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_stateform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_citylist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_citylist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_cityform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_cityform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\admin\\partials\\_countryform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\admin\\partials\\_countryform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\shared\\_loginlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\shared\\_loginlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\city\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\city\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\models\\countrymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\models\\countrymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\models\\citymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\models\\citymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\city\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\city\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\models\\statemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\models\\statemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\state\\stateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\state\\stateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\models\\storemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\models\\storemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\state\\istateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\state\\istateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\login\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\login\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\country\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\country\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\admin\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\admin\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\views\\store\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\views\\store\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|c:\\users\\lenovo\\documents\\extra\\aquarex\\country_store\\country_store\\services\\store\\storeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ACCB6C9-D58B-494F-8C36-6449F2D2C7EC}|Country_Store\\Country_Store.csproj|solutionrelative:country_store\\services\\store\\storeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Home\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Home\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Home\\AccessDenied.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Home\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T09:50:30.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwC8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-27T04:39:47.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Program.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Program.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Program.cs",
+              "RelativeToolTip": "Country_Store\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAUwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T13:09:17.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PermissionService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Permission\\PermissionService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Permission\\PermissionService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Permission\\PermissionService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Permission\\PermissionService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA0wCcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T08:37:52.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PermissionController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\PermissionController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\PermissionController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\PermissionController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\PermissionController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:29:27.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T12:03:43.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:10:13.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T05:28:23.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:02:01.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StoreController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\StoreController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\StoreController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\StoreController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\StoreController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T11:15:15.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StateController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\StateController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\StateController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\StateController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\StateController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T05:31:31.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:29:15.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CountryController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\CountryController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\CountryController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\CountryController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\CountryController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T05:28:17.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CityController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\CityController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\CityController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\CityController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\CityController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T05:32:23.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Country_Store\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T06:04:57.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PermissionAuthorizeAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Attributes\\PermissionAuthorizeAttribute.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Attributes\\PermissionAuthorizeAttribute.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Attributes\\PermissionAuthorizeAttribute.cs",
+              "RelativeToolTip": "Country_Store\\Attributes\\PermissionAuthorizeAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T05:27:33.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Admin\\AdminService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Admin\\AdminService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Admin\\AdminService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Admin\\AdminService.cs",
+              "ViewState": "AgIAAAkCAAAAAAAAAAAUwB4CAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:29:53.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\User\\UserService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\User\\UserService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\User\\UserService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\User\\UserService.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAUwH8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:02:01.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_UserForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_UserForm.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_UserForm.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_UserForm.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_UserForm.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAkwEsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-27T12:26:10.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_StoreList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StoreList.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_StoreList.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StoreList.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_StoreList.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAD4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T10:46:39.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_UserList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_UserList.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_UserList.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_UserList.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_UserList.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-27T06:47:34.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_PermissionCheckbox.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_PermissionCheckbox.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_PermissionCheckbox.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_PermissionCheckbox.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_PermissionCheckbox.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwCgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-27T07:28:00.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "_PermissionForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_PermissionForm.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_PermissionForm.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_PermissionForm.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_PermissionForm.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-27T07:28:30.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PermissionModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\PermissionModel.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Models\\PermissionModel.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\PermissionModel.cs",
+              "RelativeToolTip": "Country_Store\\Models\\PermissionModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:30:14.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\UserModel.cs",
+              "RelativeToolTip": "Country_Store\\Models\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T11:58:15.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CountryService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Country\\CountryService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Country\\CountryService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Country\\CountryService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Country\\CountryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:40:31.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Login\\LoginService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Login\\LoginService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Login\\LoginService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Login\\LoginService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAWwC8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:37:17.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IPermissionService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Permission\\IPermissionService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Permission\\IPermissionService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Permission\\IPermissionService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Permission\\IPermissionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T08:37:26.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "_CountryList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CountryList.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_CountryList.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CountryList.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_CountryList.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T16:08:54.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_StoreForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StoreForm.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_StoreForm.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StoreForm.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_StoreForm.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T12:22:45.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "_StateList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StateList.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_StateList.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StateList.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_StateList.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-17T12:09:36.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "_StateForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StateForm.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_StateForm.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_StateForm.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_StateForm.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-17T12:09:13.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "_CityList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CityList.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_CityList.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CityList.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_CityList.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAIwCsAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T17:08:43.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "_CityForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CityForm.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_CityForm.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CityForm.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_CityForm.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T12:46:33.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\User\\IUserService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\User\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\User\\IUserService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\User\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:40:37.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\LoginModel.cs",
+              "RelativeToolTip": "Country_Store\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T11:58:30.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "_CountryForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CountryForm.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Admin\\Partials\\_CountryForm.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Admin\\Partials\\_CountryForm.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Admin\\Partials\\_CountryForm.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-27T04:51:07.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IStateService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\State\\IStateService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\State\\IStateService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\State\\IStateService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\State\\IStateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T05:28:32.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "StateService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\State\\StateService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\State\\StateService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\State\\StateService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\State\\StateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T05:21:25.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ILoginService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Login\\ILoginService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Login\\ILoginService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Login\\ILoginService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Login\\ILoginService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:46:02.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "_LoginLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Shared\\_LoginLayout.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Shared\\_LoginLayout.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Shared\\_LoginLayout.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Shared\\_LoginLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T12:20:25.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:59:40.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CountryModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\CountryModel.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Models\\CountryModel.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\CountryModel.cs",
+              "RelativeToolTip": "Country_Store\\Models\\CountryModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T11:58:25.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\City\\List.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\City\\List.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\City\\List.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\City\\List.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T17:08:56.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CityService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\City\\CityService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\City\\CityService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\City\\CityService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\City\\CityService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAApwBUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T17:07:37.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "CityModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\CityModel.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Models\\CityModel.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\CityModel.cs",
+              "RelativeToolTip": "Country_Store\\Models\\CityModel.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA5wAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T17:06:14.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IAdminService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Admin\\IAdminService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Admin\\IAdminService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Admin\\IAdminService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Admin\\IAdminService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwCgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:30:15.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "StateModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\StateModel.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Models\\StateModel.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\StateModel.cs",
+              "RelativeToolTip": "Country_Store\\Models\\StateModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:04:58.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Store\\List.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Store\\List.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Store\\List.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Store\\List.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T11:18:44.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Country\\List.cshtml",
+              "RelativeDocumentMoniker": "Country_Store\\Views\\Country\\List.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Views\\Country\\List.cshtml",
+              "RelativeToolTip": "Country_Store\\Views\\Country\\List.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T10:05:08.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "StoreService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Store\\StoreService.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Services\\Store\\StoreService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Services\\Store\\StoreService.cs",
+              "RelativeToolTip": "Country_Store\\Services\\Store\\StoreService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T11:16:32.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "StoreModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\StoreModel.cs",
+              "RelativeDocumentMoniker": "Country_Store\\Models\\StoreModel.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\Extra\\Aquarex\\Country_Store\\Country_Store\\Models\\StoreModel.cs",
+              "RelativeToolTip": "Country_Store\\Models\\StoreModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T11:15:34.104Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
