@@ -7,7 +7,7 @@
 
     <ul class="nav nav-tabs mb-3">
         <li class="nav-item">
-            <a class="nav-link inner-tab active" data-tab="Country" href="#">Country</a>
+            <a class="nav-link inner-tab" data-tab="Country" href="#">Country</a>
         </li>
         <li class="nav-item">
             <a class="nav-link inner-tab" data-tab="State" href="#">State</a>
@@ -24,14 +24,22 @@
         <li class="nav-item">
             <a class="nav-link inner-tab" data-tab="Permission" href="#">Permission</a>
         </li>
+      
     </ul>
-    @if (TempData["Message"] != null)
+    @if (TempData["Message"] != null || TempData["Error"] != null)
     {
-        <div class="alert alert-success text-center">@TempData["Message"]</div>
+        var alertClass = TempData["Message"] != null ? "alert-success" : "alert-danger";
+        var message = TempData["Message"] ?? TempData["Error"];
+
+        <div id="tempMessage" class="alert @alertClass alert-dismissible fade show text-center mt-2" role="alert">
+            @message
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     }
 
 
-    <div id="tempMessage">@TempData["Message"]</div>
+
+   
 
     <div class="row mt-3">
         <div class="col-md-5" id="formArea">
@@ -44,30 +52,25 @@
 </div>
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/Country.js"></script>
+    <script src="~/js/State.js"></script>
+    <script src="~/js/City.js"></script>
+    <script src="~/js/Store.js"></script>
+    <script src="~/js/User.js"></script>
+
 
     <script>
-        
-        setTimeout(() => {
-            $('#tempMessage').fadeOut('slow');
-        }, 3000);
-
-               function loadTabContent(tab) {
-            // Call the new route: /admin/loadform/{tab}
-            $.get(`/admin/loadform/${tab}`, function (formHtml) {
-                $('#formArea').html(formHtml);
-            });
-
+            function loadTabContent(tab) {
+            $.get(`/admin/loadform/${tab}`, data => $('#formArea').html(data));
             if (tab !== 'Permission') {
-                // Call the new route: /admin/loadlist/{tab}
-                $.get(`/admin/loadlist/${tab}`, function (listHtml) {
-                    $('#listArea').html(listHtml);
-                });
+                $.get(`/admin/loadlist/${tab}`, data => $('#listArea').html(data));
             } else {
-                $('#listArea').html('');
+                $('#listArea').empty();
             }
         }
 
-        // Handle tab click
+
+
         $(document).on('click', '.nav-link.inner-tab', function (e) {
             e.preventDefault();
             $('.nav-link.inner-tab').removeClass('active');
@@ -78,113 +81,40 @@
             loadTabContent(tab);
         });
 
-        // On page load
-        $(document).ready(function () {
+        $(document).ready(() => {
             const validTabs = ['Country', 'State', 'City', 'Store', 'User', 'Permission'];
-
             let lastTab = '@TempData["ResetTab"]' || localStorage.getItem('lastTab') || 'Country';
-            if (!validTabs.includes(lastTab)) {
-                lastTab = 'Country';
-            }
+            if (!validTabs.includes(lastTab)) lastTab = 'Country';
 
-            $('.nav-link.inner-tab').removeClass('active');
             $(`.nav-link.inner-tab[data-tab="${lastTab}"]`).addClass('active');
-
             loadTabContent(lastTab);
         });
 
-        // --- COUNTRY ---
-        function reloadCountryForm(id) {
-            $.get('/Admin/GetCountryByID', { id: id }, function (data) {
-                $('#formArea').html(data);
-            });
-        }
+        setTimeout(() => $('#tempMessage').fadeOut('slow'), 3000);
+                  
 
-        function reloadCountryTab() {
-            loadTabContent('Country');
-        }
-
-        // --- STATE ---
-        function reloadStateForm(id) {
-            $.get('/Admin/GetStateByID', { id: id }, function (data) {
-                $('#formArea').html(data);
-                  $('#formArea').html(data);
-            });
-        }
-
-        function reloadStateTab() {
-            loadTabContent('State');
-        }
-
-        // --- CITY ---
-        function reloadCityForm(id) {
-            $.get('/Admin/GetIdByCity', { id: id }, function (data) {
-                $('#formArea').html(data);
-                  $('#formArea').html(data);
-            });
-        }
-
-        function reloadCityTab() {
-            loadTabContent('City');
-        }
-
-        // --- STORE ---
-        function reloadStoreForm(id) {
-            $.get('/Admin/GetStoreById', { id: id }, function (data) {
-                $('#formArea').html(data);
-                  $('#formArea').html(data);
-            });
-        }
-
-        function reloadStoreTab() {
-            loadTabContent('Store');
-        }
-        
-        // --- USER ---
-             function reloadUserForm(id) {
-            $.get('@Url.Action("GetUserByID", "User")', { id: id }, function (data) {
-                $('#formArea').html(data);
-            }).fail(function () {
-                alert('Failed to load user form.');
-            });
-        }
-        function reloadUserTab() {
-            $.get('/User/LoadTab?tab=User', function (formHtml) {
-                $('#formArea').html(formHtml);
-            });
-
-            $.get('/User/LoadList?tab=User', function (listHtml) {
-                $('#listArea').html(listHtml);
-            });
-        }
-
-       
-        // --- PERMISSION USER DROPDOWN CHANGE HANDLER ---
+        // ---------- PERMISSION -------
         $(document).on('change', '#SelectedUserId', function () {
-            var userId = $(this).val();
-            if (userId) {
-                $.get('/Permission/Manage', { userId: userId }, function (formHtml) {
-                    $('#formArea').html(formHtml);
-                });
-            }
-        });
-                               $(document).on('change', '#SelectedUserId', function () {
-            var userId = $(this).val();
-            if (userId) {
-                $.get('/Permission/Manage', { userId: userId }, function (formHtml) {
-                    $('#permissionFormContainer').html(formHtml);
-                }).fail(function (xhr) {
-                    alert("Error loading permissions: " + xhr.responseText);
-                });
-            } else {
-                $('#permissionFormContainer').html('');
-            }
+            const userId = $(this).val();
+            if (!userId) { $('#permissionFormContainer,#formArea').empty(); return; }
+
+            $.get('/Permission/Manage', { userId }, html => {
+                $('#formArea, #permissionFormContainer').html(html);
+            }).fail(xhr => alert('Error loading permissions: ' + xhr.responseText));
         });
 
 
-
+              setTimeout(function () {
+            const msg = document.getElementById("tempMessage");
+            if (msg) {
+                msg.style.transition = "opacity 0.5s ease";
+                msg.style.opacity = "0";
+                setTimeout(() => msg.remove(), 500);
+            }
+        }, 3000);
 
     </script>
+
 }
 
 

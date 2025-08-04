@@ -1,17 +1,23 @@
 ﻿@model Country_Store.Models.LoginModel
 @{
-    Layout = "~/Views/Shared/_LoginLayout.cshtml";
-}
-@{
+    Layout = null;
     ViewData["Title"] = "Login";
 }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
 
-<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
-    <div class="card shadow-lg rounded-4" style="width: 400px;">
-        <div class="card-body p-5">
-            <h3 class="text-center text-primary mb-4">Welcome 👋</h3>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/Login-Style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2 id="greetingText" class="text-center text-primary mb-3" style="font-size: 1.2rem;">Welcome 👋</h2>
+
 
             @if (TempData["ErrorMessage"] != null)
             {
@@ -23,55 +29,44 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger text-center" })
 
             <form asp-action="Login" method="post">
-                <div class="form-group mb-4">
-                    <label asp-for="Username" class="form-label fw-semibold">Username</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="fas fa-user text-secondary"></i></span>
-                        <input asp-for="Username" class="form-control form-control-lg" placeholder="Enter your username" />
-                    </div>
-                    <span asp-validation-for="Username" class="text-danger small"></span>
+                <div class="input-box">
+                    <input asp-for="Username" required />
+                    <label>Username</label>
                 </div>
-
-                <div class="form-group mb-4">
-                    <label asp-for="Password" class="form-label fw-semibold">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="fas fa-lock text-secondary"></i></span>
-                        <input asp-for="Password" type="password" class="form-control form-control-lg" id="passwordField" placeholder="Enter your password" />
-                        <span class="input-group-text bg-white">
-                            <i class="fas fa-eye text-secondary" id="togglePassword" style="cursor: pointer;"></i>
-                        </span>
-                    </div>
-                    <span asp-validation-for="Password" class="text-danger small"></span>
+                <div class="input-box">
+                    <input asp-for="Password" type="password" required />
+                    <label>Password</label>
                 </div>
-
-                
-              
-                <div class="d-grid mb-3">
-                    <button type="submit" class="btn btn-primary btn-lg rounded-pill">
-                        <i class="fas fa-sign-in-alt me-2"></i> Login
-                    </button>
-                </div>
-
-              
+                <button type="submit" class="btn">Login</button>
             </form>
         </div>
-    </div>
-</div>
 
-@section Scripts {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
+        @* Animated glowing spans *@
+        @for (int i = 0; i < 50; i++)
+        {
+            <span style="--i:@i;"></span>
+        }
+    </div>
 
     <script>
-        const togglePassword = document.getElementById("togglePassword");
-        const passwordField = document.getElementById("passwordField");
+        // Dynamic greeting text
+        window.addEventListener("DOMContentLoaded", function () {
+            const hour = new Date().getHours();
+            const greetingEl = document.getElementById("greetingText");
+            let greeting = "Welcome 👋";
 
-        togglePassword.addEventListener("click", function () {
-            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-            passwordField.setAttribute("type", type);
+            if (hour >= 5 && hour < 12) {
+                greeting = "Good Morning, ☀️";
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "Good Afternoon,  🌤️";
+            } else {
+                greeting = "Good Evening,  🌙";
+            }
 
-            this.classList.toggle("fa-eye");
-            this.classList.toggle("fa-eye-slash");
+            greetingEl.textContent = greeting;
         });
     </script>
-}
 
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+</body>
+</html>

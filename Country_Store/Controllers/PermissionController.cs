@@ -22,6 +22,9 @@ namespace Country_Store.Controllers
             _permissionService = permissionService;
              _userService = userService;
         }
+        // [GET] Load permission form for selected user (via AJAX)
+        // - Loads user list (only "User" role)
+        // - Pre-fills permissions if userId is provided
         [HttpGet]
         public IActionResult Manage(int? userId)
         {
@@ -60,14 +63,15 @@ namespace Country_Store.Controllers
             }
         }
 
+        //  [GET] Get checkbox-only permission form for a user (used for dynamic AJAX reload)
+
         [HttpGet]
         public IActionResult GetPermissionForm(int userId)
         {
             try
             {
-                var permissions = _permissionService.GetUserPermissions(userId); // This is List<string>
-                permissions ??= new List<string>(); // Ensure it's not null
-
+                var permissions = _permissionService.GetUserPermissions(userId); 
+                permissions ??= new List<string>(); 
                 var model = new PermissionModel
                 {
                     SelectedUserId = userId,
@@ -79,7 +83,7 @@ namespace Country_Store.Controllers
                     UserAccess = permissions.Contains("User")
                 };
 
-                return PartialView("~/Views/Admin/Partials/_PermissionCheckboxForm.cshtml", model);
+                return PartialView("~/Views/Admin/Partials/_PermissionCheckbox.cshtml", model);
             }
             catch (Exception ex)
             {
@@ -88,7 +92,9 @@ namespace Country_Store.Controllers
         }
 
 
-
+        //  [POST] Save selected permissions for a user
+        // - Collects selected checkboxes into a list
+        // - Saves via service
         [HttpPost]
         public IActionResult Manage(PermissionModel model)
         {
@@ -110,7 +116,8 @@ namespace Country_Store.Controllers
         }
 
 
-
+        //  [GET] Load user + permission form
+        // - Used when both dropdown and checkboxes need to be loaded
         [HttpGet]
         public IActionResult LoadPermissions(int userId)
         {

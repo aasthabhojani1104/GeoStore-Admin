@@ -66,7 +66,6 @@ C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\ne
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\Country_.E528E636.Up2Date
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\Country_Store.dll
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\refint\Country_Store.dll
@@ -78,3 +77,6 @@ C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\ne
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\Country_Store.sourcelink.json
+C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\bin\Debug\net8.0\web.config
+C:\Users\Lenovo\Documents\Extra\Aquarex\Country_Store\Country_Store\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

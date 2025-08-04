@@ -7,20 +7,7 @@
                 <div class="card-body">
                     <h4 class="text-center text-primary mb-4">@ViewBag.Title</h4>
 
-                    @if (TempData["Error"] != null)
-                    {
-                        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                            @TempData["Error"]
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    }
-
-                    @if (TempData["Error"] != null)
-                    {
-                        <div class="alert alert-danger text-center">
-                            @TempData["Error"]
-                        </div>
-                    }
+                   
 
 
                     <form id="cityForm" asp-action="AddOrEditCity" asp-controller="Admin" method="post">
@@ -80,10 +67,7 @@
 
 @section Scripts {
     <script>
-        $(document).ready(function () {
-            // Auto-hide temp message after 3 seconds
-            setTimeout(() => $('#tempMessage').fadeOut('slow'), 3000);
-        });
+     
     </script>
 
 

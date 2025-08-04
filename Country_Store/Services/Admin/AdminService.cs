@@ -20,8 +20,56 @@ namespace Country_Store.Services.Admin
             _connectionString = _configuration.GetConnectionString("MyConnection");
         }
 
+
         #region Country
-              
+        public PagedResult<CountryModel> GetPagedCountries(int page, int pageSize, string searchTerm = "")
+        {
+            var result = new PagedResult<CountryModel>();
+            var items = new List<CountryModel>();
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("PL_CountryPaged", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PageNumber", page);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                cmd.Parameters.AddWithValue("@SearchTerm", searchTerm ?? string.Empty); 
+
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                // First result: Paged data
+                while (reader.Read())
+                {
+                    items.Add(new CountryModel
+                    {
+                        CountryId = Convert.ToInt32(reader["CountryId"]),
+                        CountryName = reader["CountryName"].ToString(),
+                        CountryCode = reader["CountryCode"].ToString(),
+                        Continent = reader["Continent"].ToString(),
+                        CreatedDate = Convert.ToDateTime(reader["CreatedDate"])
+                    });
+                }
+
+                // Second result: Total count
+                int totalCount = 0;
+                if (reader.NextResult() && reader.Read())
+                {
+                    totalCount = Convert.ToInt32(reader["TotalCount"]);
+                }
+
+                reader.Close();
+
+                result.Items = items;
+                result.CurrentPage = page;
+                result.PageSize = pageSize;
+                result.TotalItems = totalCount;
+            }
+
+            return result;
+            
+        }
+
+
         public List<CountryModel> GetAllCountries()
         {
             var countries = new List<CountryModel>();
@@ -50,7 +98,7 @@ namespace Country_Store.Services.Admin
             return countries;
         }
 
-        // dropdowns 
+    
        
         public List<SelectListItem> GetCountriesDropDown()
         {
@@ -143,6 +191,56 @@ namespace Country_Store.Services.Admin
 
 
         #region State
+
+        public PagedResult<StateModel> GetPagedStates(int pageNumber, int pageSize, string searchTerm = null)
+        {
+            var result = new PagedResult<StateModel>();
+            var stateList = new List<StateModel>();
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("PL_StatePaged", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                cmd.Parameters.AddWithValue("@SearchTerm", string.IsNullOrEmpty(searchTerm) ? DBNull.Value : (object)searchTerm);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                // Table 0: Paged State list
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    stateList.Add(new StateModel
+                    {
+                        StateId = Convert.ToInt32(row["StateId"]),
+                        StateName = row["StateName"].ToString(),
+                        Capital = row["Capital"].ToString(),
+                        Language = row["Language"].ToString(),
+                        CountryId = Convert.ToInt32(row["CountryId"]),
+                        CountryName = row["CountryName"].ToString()
+                    });
+                }
+
+                // Table 1: Total Count
+                if (ds.Tables.Count > 1 && ds.Tables[1].Rows.Count > 0)
+                {
+                    result.TotalItems = Convert.ToInt32(ds.Tables[1].Rows[0]["TotalCount"]);
+                }
+
+                result.Items = stateList;
+                result.CurrentPage = pageNumber;
+                result.PageSize = pageSize;
+            }
+
+            return result;
+        }
+
+
+
+
         public List<StateModel> GetAllState()
         {
             List<StateModel> list = new List<StateModel>();
@@ -261,6 +359,52 @@ namespace Country_Store.Services.Admin
         #endregion
 
         #region City
+        public PagedResult<CityModel> GetPagedCities(int page, int pageSize, string searchTerm)
+        {
+            var result = new PagedResult<CityModel>
+            {
+                Items = new List<CityModel>(),
+                CurrentPage = page,
+                PageSize = pageSize
+            };
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("PL_CityPaged", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@PageNumber", page);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                cmd.Parameters.AddWithValue("@SearchTerm", string.IsNullOrEmpty(searchTerm) ? DBNull.Value : searchTerm);
+
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                // 1. Read city list
+                while (reader.Read())
+                {
+                    result.Items.Add(new CityModel
+                    {
+                        CityId = Convert.ToInt32(reader["CityId"]),
+                        CityName = reader["CityName"].ToString(),
+                        PinCode = reader["PinCode"].ToString(),
+                        Population = Convert.ToInt32(reader["Population"]),
+                        StateName = reader["StateName"].ToString()
+                    });
+                }
+
+                // 2. Total count
+                if (reader.NextResult() && reader.Read())
+                {
+                    result.TotalItems = Convert.ToInt32(reader["TotalCount"]);
+                }
+
+                reader.Close();
+            }
+
+            return result;
+        }
+
 
         public List<CityModel> GetAllCity()
         {
@@ -361,6 +505,60 @@ namespace Country_Store.Services.Admin
 
         #region Store
 
+        public PagedResult<StoreModel> GetPagedStores(int page, int pageSize, string searchTerm)
+        {
+            var result = new PagedResult<StoreModel>
+            {
+                Items = new List<StoreModel>(),
+                CurrentPage = page,
+                PageSize = pageSize,
+                TotalItems = 0
+            };
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("PL_StorePaged", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@PageNumber", page);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                cmd.Parameters.AddWithValue("@SearchTerm", string.IsNullOrEmpty(searchTerm) ? DBNull.Value : (object)searchTerm);
+
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // 1st Result Set: Store list
+                    while (reader.Read())
+                    {
+                        result.Items.Add(new StoreModel
+                        {
+                            StoreId = Convert.ToInt32(reader["StoreId"]),
+                            StoreName = reader["StoreName"].ToString(),
+                            OpeningTime = TimeSpan.Parse(reader["OpeningTime"].ToString()),
+                            ClosingTime = TimeSpan.Parse(reader["ClosingTime"].ToString()),
+                            Address = reader["Address"].ToString(),
+                            CountryName = reader["CountryName"].ToString(),
+                            StateName = reader["StateName"].ToString(),
+                            CityName = reader["CityName"].ToString()
+                        });
+                    }
+
+                    // 2nd Result Set: Total Count
+                    if (reader.NextResult() && reader.Read())
+                    {
+                        result.TotalItems = Convert.ToInt32(reader["TotalCount"]);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+
+
+
+
+
         public List<SelectListItem> GetCitiesByStateId(int stateId)
         {
             var cities = new List<SelectListItem>();
@@ -451,6 +649,7 @@ namespace Country_Store.Services.Admin
                 cmd.Parameters.AddWithValue("@CountryId", model.CountryId);
                 cmd.Parameters.AddWithValue("@StateId", model.StateId);
                 cmd.Parameters.AddWithValue("@CityId", model.CityId);
+                cmd.Parameters.AddWithValue("@Address", model.Address);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -501,6 +700,9 @@ namespace Country_Store.Services.Admin
                     model.CountryId = Convert.ToInt32(rdr["CountryId"]);
                     model.StateId = Convert.ToInt32(rdr["StateId"]);
                     model.CityId = Convert.ToInt32(rdr["CityId"]);
+                    model.Address = rdr["Address"]?.ToString();
+
+
                 }
             }
 
@@ -534,7 +736,9 @@ namespace Country_Store.Services.Admin
                        
                         CountryName = rdr["CountryName"].ToString(),
                         StateName = rdr["StateName"].ToString(),
-                        CityName = rdr["CityName"].ToString()
+                        CityName = rdr["CityName"].ToString(),
+                        Address = rdr["Address"]?.ToString()
+
                     });
                 }
             }

@@ -7,8 +7,7 @@ namespace Country_Store.Services
     {
         List<StoreModel> GetAllStores();                  
                        
-             
+      PagedResult<StoreModel> GetPagedStores(int page, int pageSize,string searchTearm);       
     
-
-}
+    }
 }

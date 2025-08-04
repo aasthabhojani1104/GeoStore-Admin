@@ -26,6 +26,7 @@ namespace Country_Store.Models
 
         [Required(ErrorMessage = "City selection is required")]
         public int CityId { get; set; }
+        public string Address { get; set; }
 
         // Display-only fields
         public string? CountryName { get; set; }

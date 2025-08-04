@@ -1,91 +1,144 @@
-﻿@model List<Country_Store.Models.StateModel>
-
+﻿@model PagedResult<Country_Store.Models.StateModel>
 @{
     ViewBag.Title = "State List";
 }
-
-@* @if (TempData["Message"] != null)
-{
-    <div id="tempMessage" class="alert alert-success text-center">
-        @TempData["Message"]
-    </div>
-} *@
-@if (TempData["Message"] != null)
-{
-    <div class="alert alert-success text-center">@TempData["Message"]</div>
-}
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger text-center">@TempData["Error"]</div>
-}
-
 
 <div class="container mt-5">
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="text-primary">State List</h2>
-                @* <a asp-action="
-" class="btn btn-success">
-                    <i class="bi bi-plus-lg"></i> Add New State
-                </a> *@
+                <h3 class="text-primary">🏙️ State List</h3>
+
+                <div class="input-group w-50">
+                    <input type="text" id="stateSearch" value="@ViewBag.Search" class="form-control form-control-sm" placeholder="🔍 Search states..." />
+                  
+                </div>
             </div>
 
-            <table class="table table-bordered table-striped table-hover shadow-sm">
-                <thead class="table-primary text-center">
-                    <tr>
-                        <th>#</th>
-                        <th>State Name</th>
-                        <th>Capital</th>
-                        <th>Language</th>
-                        <th>Country</th>
-                       
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (Model != null && Model.Any())
-                    {
-                        int i = 1;
-                        foreach (var item in Model)
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success text-center" id="tempMessage">@TempData["Message"]</div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger text-center" id="tempMessage">@TempData["Error"]</div>
+            }
+
+            <div id="stateListContainer">
+                <table class="table table-bordered table-striped table-hover shadow-sm">
+                    <thead class="table-primary text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>State Name</th>
+                            <th>Capital</th>
+                            <th>Language</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Items != null && Model.Items.Any())
+                        {
+                            int i = (Model.CurrentPage - 1) * Model.PageSize + 1;
+                            foreach (var item in Model.Items)
+                            {
+                                <tr>
+                                    <td class="text-center">@i</td>
+                                    <td>@item.StateName</td>
+                                    <td>@item.Capital</td>
+                                    <td>@item.Language</td>
+                                    <td>@item.CountryName</td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
                         {
                             <tr>
-                                <td class="text-center">@i</td>
-                                <td>@item.StateName</td>
-                                <td>@item.Capital</td>
-                                <td>@item.Language</td>
-                                <td>@item.CountryName</td>
-                               @*  <td class="text-center">
-                                    <a asp-action="AddOrEdit" asp-route-id="@item.StateId" class="btn btn-sm btn-primary me-2">
-                                        <i class="bi bi-pencil-square"></i> Edit
-                                    </a>
-                                    <a asp-action="Delete" asp-route-id="@item.StateId" class="btn btn-sm btn-danger"
-                                       onclick="return confirm('Are you sure you want to delete this state?');">
-                                        <i class="bi bi-trash3"></i> Delete
-                                    </a>
-                                </td> *@
+                                <td colspan="5" class="text-center text-muted">No states found.</td>
                             </tr>
-                            i++;
                         }
-                    }
-                    else
-                    {
-                        <tr>
-                            <td colspan="6" class="text-center text-muted">No states found.</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+
+                @if (Model.TotalPages > 1)
+                {
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <a class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == 1 ? "disabled" : "")"
+                           href="@Url.Action("List", "State", new { page = Model.CurrentPage - 1, search = ViewBag.Search })">
+                            ⬅️ Previous
+                        </a>
+
+                        <nav>
+                            <ul class="pagination pagination-sm mb-0">
+                                @for (int p = 1; p <= Model.TotalPages; p++)
+                                {
+                                    <li class="page-item @(p == Model.CurrentPage ? "active" : "")">
+                                        <a class="page-link" href="@Url.Action("List", "State", new { page = p, search = ViewBag.Search })">@p</a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+
+                        <a class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")"
+                           href="@Url.Action("List", "State", new { page = Model.CurrentPage + 1, search = ViewBag.Search })">
+                            Next ➡️
+                        </a>
+                    </div>
+                }
+
+                <div class="text-end text-muted mt-2">
+                    Showing page @Model.CurrentPage of @Model.TotalPages | Total states: <strong>@Model.TotalItems</strong>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 @section Scripts {
     <script>
-        setTimeout(function () {
-            var msg = document.getElementById("tempMessage");
-            if (msg) {
-                msg.style.display = "none";
-            }
-        }, 4000); // 4 seconds
+        let typingTimer;
+        const debounceDelay = 300;
+
+        $(document).ready(function () {
+            $(document).on('keyup', '#stateSearch', function () {
+                clearTimeout(typingTimer);
+                const searchValue = $(this).val();
+
+                typingTimer = setTimeout(() => {
+                    $.get("/State/List", { page: 1, search: searchValue }, function (html) {
+                        $('#stateListContainer').html($(html).find('#stateListContainer').html());
+                    });
+                }, debounceDelay);
+            });
+
+            $(document).on('click', '.pagination .page-link', function (e) {
+                e.preventDefault();
+                const url = $(this).attr('href');
+                if (url) {
+                    $.get(url, function (html) {
+                        $('#stateListContainer').html($(html).find('#stateListContainer').html());
+                    });
+                }
+            });
+        });
+
+        function searchState() {
+            const search = document.getElementById("stateSearch").value;
+            $.get("/State/List", { page: 1, search }, function (html) {
+                $('#stateListContainer').html($(html).find('#stateListContainer').html());
+            });
+        }
+
+        function cancelStateSearch() {
+            document.getElementById("stateSearch").value = "";
+            $.get("/State/List", { page: 1 }, function (html) {
+                $('#stateListContainer').html($(html).find('#stateListContainer').html());
+            });
+        }
+
+        setTimeout(() => {
+            const msg = document.getElementById("tempMessage");
+            if (msg) msg.style.display = "none";
+        }, 4000);
     </script>
 }

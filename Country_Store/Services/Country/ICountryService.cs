@@ -9,7 +9,7 @@ namespace Country_Store.Services.Country
     {
         
         List<CountryModel> GetAllCountries();
-        
+        PagedResult<CountryModel> GetPagedCountries(int page, int pageSize,string search);
     }
 
 }

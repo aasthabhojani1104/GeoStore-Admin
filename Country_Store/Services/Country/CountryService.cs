@@ -51,6 +51,51 @@ namespace Country_Store.Services.Country
         }
 
 
+        public PagedResult<CountryModel> GetPagedCountries(int page, int pageSize, string searchTerm = null)
+        {
+            var result = new PagedResult<CountryModel>();
+            var items = new List<CountryModel>();
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("PL_CountryPaged", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PageNumber", page);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                cmd.Parameters.AddWithValue("@SearchTerm", (object)searchTerm ?? DBNull.Value);
+
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    items.Add(new CountryModel
+                    {
+                        CountryId = Convert.ToInt32(reader["CountryId"]),
+                        CountryName = reader["CountryName"].ToString(),
+                        CountryCode = reader["CountryCode"].ToString(),
+                        Continent = reader["Continent"].ToString(),
+                        CreatedDate = Convert.ToDateTime(reader["CreatedDate"])
+                    });
+                }
+
+                int totalCount = 0;
+                if (reader.NextResult() && reader.Read())
+                {
+                    totalCount = Convert.ToInt32(reader["TotalCount"]);
+                }
+
+                result.Items = items;
+                result.CurrentPage = page;
+                result.PageSize = pageSize;
+                result.TotalItems = totalCount;
+            }
+
+            return result;
+        }
+
+
+
 
     }
 

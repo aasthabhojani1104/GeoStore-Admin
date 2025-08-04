@@ -12,6 +12,70 @@ namespace Country_Store.Services.User
         {
             _connectionString = configuration.GetConnectionString("MyConnection");
         }
+        public PagedResult<UserModel> GetPagedUsers(int pageNumber, int pageSize, string searchTerm)
+        {
+            var result = new PagedResult<UserModel>();
+            var userList = new List<UserModel>();
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("PL_UserPaged", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                cmd.Parameters.AddWithValue("@SearchTerm", string.IsNullOrEmpty(searchTerm) ? (object)DBNull.Value : searchTerm);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                // Table 0: User list
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    var user = new UserModel
+                    {
+                        UserId = Convert.ToInt32(row["UserId"]),
+                        Username = row["Username"].ToString(),
+                        Password = row["Password"].ToString(),
+                        FullName = row["FullName"].ToString(),
+                        Role = row["Role"].ToString(),
+                        IsActive = Convert.ToBoolean(row["IsActive"]),
+                        AssignedPermissions = new List<string>()
+                    };
+
+                    userList.Add(user);
+                }
+
+                // Table 1: Total count
+                if (ds.Tables.Count > 1 && ds.Tables[1].Rows.Count > 0)
+                {
+                    result.TotalItems = Convert.ToInt32(ds.Tables[1].Rows[0]["TotalCount"]);
+                }
+
+                // Table 2: Permission list
+                if (ds.Tables.Count > 2)
+                {
+                    var permissionRows = ds.Tables[2].AsEnumerable();
+                    foreach (var user in userList)
+                    {
+                        user.AssignedPermissions = permissionRows
+                            .Where(r => Convert.ToInt32(r["UserId"]) == user.UserId)
+                            .Select(r => r["PermissionName"].ToString())
+                            .ToList();
+                    }
+                }
+
+                result.Items = userList;
+                result.CurrentPage = pageNumber;
+                result.PageSize = pageSize;
+            }
+
+            return result;
+        }
+
+
+
+
         public List<UserModel> GetAllUsers()
         {
             var users = new List<UserModel>();

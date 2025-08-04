@@ -1,18 +1,12 @@
-﻿@model List<Country_Store.Models.StateModel>
+﻿@model Country_Store.Models.PagedResult<Country_Store.Models.StateModel>
+
 
 @if (TempData["Message"] != null)
 {
-    <div class="alert alert-success alert-dismissible fade show mt-2 text-center" id="tempMessage" role="alert">
+    <div class="alert alert-success alert-dismissible fade show mt-2 text-center"
+         id="tempMessage"
+         style="background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
         @TempData["Message"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-}
-
-
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger alert-dismissible fade show text-center" id="errorMessage" role="alert">
-        @TempData["Error"]
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
@@ -22,9 +16,15 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="text-primary mb-0">🏙️ State List</h3>
-               
             </div>
 
+            <!-- 🔍 Search box -->
+            <div class="input-group mb-3">
+                <input type="text" id="stateSearch" class="form-control" placeholder="🔍 Search states..." value="@ViewBag.Search" />
+             
+            </div>
+
+            <!-- 📋 Table -->
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center align-middle shadow-sm">
                     <thead class="table-primary">
@@ -38,10 +38,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (Model != null && Model.Any())
+                        @if (Model != null && Model.Items.Any())
                         {
-                            int i = 1;
-                            foreach (var item in Model)
+                            int i = (Model.CurrentPage - 1) * Model.PageSize + 1;
+                            foreach (var item in Model.Items)
                             {
                                 <tr>
                                     <td>@i</td>
@@ -53,13 +53,11 @@
                                         <button class="btn btn-sm btn-outline-primary me-1" onclick="reloadStateForm(@item.StateId)">
                                             <i class="bi bi-pencil"></i>
                                         </button>
-
-                                        <a asp-controller="Admin" asp-action="DeleteState" asp-route-id="@item.StateId" class="btn btn-sm btn-outline-danger"
+                                        <a asp-controller="Admin" asp-action="DeleteState" asp-route-id="@item.StateId"
+                                           class="btn btn-sm btn-outline-danger"
                                            onclick="return confirm('Are you sure you want to delete this state?');">
                                             <i class="bi bi-trash"></i>
                                         </a>
-
-
                                     </td>
                                 </tr>
                                 i++;
@@ -73,18 +71,55 @@
                         }
                     </tbody>
                 </table>
+
+                <div class="text-end text-muted mb-2">
+                    Showing page @Model.CurrentPage of @Model.TotalPages | Total states: <strong>@Model.TotalItems</strong>
+                </div>
             </div>
+
+            <!-- 🔽 Pagination -->
+            @if (Model.TotalPages > 1)
+            {
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == 1 ? "disabled" : "")"
+                            onclick="loadStatePage(@(Model.CurrentPage - 1))">
+                        ⬅️ Previous
+                    </button>
+
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            @for (int p = 1; p <= Model.TotalPages; p++)
+                            {
+                                <li class="page-item @(p == Model.CurrentPage ? "active" : "")">
+                                    <a class="page-link" href="javascript:void(0);" onclick="loadStatePage(@p)">
+                                        @p
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+
+                    <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")"
+                            onclick="loadStatePage(@(Model.CurrentPage + 1))">
+                        Next ➡️
+                    </button>
+                </div>
+            }
+
         </div>
     </div>
 </div>
+
+
+
 
 @section Scripts {
     <script>
         setTimeout(() => {
             const message = document.getElementById("tempMessage");
             if (message) message.style.display = "none";
-        }, 3000); // 3 seconds
+        }, 3000);
+
+       
     </script>
-
 }
-

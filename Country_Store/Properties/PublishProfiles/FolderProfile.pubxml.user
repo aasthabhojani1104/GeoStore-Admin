@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\PublishedApps\Country_Store</_PublishTargetUrl>
+    <History>True|2025-07-11T05:13:30.5436889Z||;False|2025-07-11T10:43:06.8265524+05:30||;True|2025-07-11T10:32:45.6594782+05:30||;True|2025-07-11T10:27:26.7722358+05:30||;True|2025-07-10T18:22:05.9830853+05:30||;True|2025-07-10T17:37:31.8324513+05:30||;True|2025-07-10T16:27:11.4240646+05:30||;True|2025-07-10T15:51:18.5277279+05:30||;True|2025-07-09T18:32:24.5841987+05:30||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="web.config">
+      <publishTime>07/10/2025 15:30:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

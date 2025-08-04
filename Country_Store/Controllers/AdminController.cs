@@ -136,14 +136,13 @@ namespace Country_Store.Controllers
             }
         }
 
-        [HttpGet("loadList/{tab}")]
-
-        public IActionResult LoadList(string tab)
+        [HttpGet("loadlist/{tab}")]
+        public async Task<IActionResult> LoadList(string tab, int page = 1, string search = "")
         {
             if (string.IsNullOrEmpty(tab))
                 return Content("Tab name is null or empty");
 
-            tab = tab.Trim().ToLower();
+            tab = tab.Trim().ToLower(); 
 
             if (!HasPermission(tab))
                 return Content("Access denied for: " + tab);
@@ -151,32 +150,35 @@ namespace Country_Store.Controllers
             switch (tab)
             {
                 case "country":
-                    var countries = _adminService.GetAllCountries();
-                    return PartialView("Partials/_CountryList", countries);
+                    var result = await Task.Run(() => _adminService.GetPagedCountries(page, 5, search));
+                    ViewBag.Search = search;
+                    return PartialView("Partials/_CountryList", result);
+
 
                 case "state":
-                    var states = _adminService.GetAllState();
+                    var states = _adminService.GetPagedStates(page,5, search);
+                    ViewBag.Search = search;
                     return PartialView("Partials/_StateList", states);
 
                 case "city":
-                    var cities = _adminService.GetAllCity();
+                    var cities = _adminService.GetPagedCities(page,5,search);
+                    ViewBag.Search = search;
                     return PartialView("Partials/_CityList", cities);
 
-                case "store":
-                    var stores = _adminService.GetAllStores();
-                    return PartialView("Partials/_StoreList", stores);
                 case "user":
-                    var usersWithPermissions = GetUsersWithPermissions(); // list
-                    return PartialView("Partials/_UserList", usersWithPermissions); // ✅ Correct
-
-
-
-
+                    var users = _userService.GetPagedUsers(page,5,search);
+                    ViewBag.Search = search;
+                    return PartialView("Partials/_UserList", users);
+                case "store":
+                    var stores = _adminService.GetPagedStores(page, 5,search);
+                    ViewBag.Search = search;
+                    return PartialView("Partials/_StoreList", stores);
 
                 default:
-                    return Content("Invalid Tab: " + tab); 
+                    return Content("Invalid Tab: " + tab);
             }
         }
+
 
         private List<UserModel> GetUsersWithPermissions()
         {
@@ -191,7 +193,7 @@ namespace Country_Store.Controllers
         #region Country
 
         [HttpGet]
-        [Route("admin/country/get/{id?}")]
+        [Route("country/get/{id?}")]
         public IActionResult GetCountryByID(int? id)
         {
            
@@ -200,7 +202,7 @@ namespace Country_Store.Controllers
         }
 
         [HttpPost]
-        [Route("admin/country/add")]
+        [Route("country/add")]
         public IActionResult AddOrUpdateCountry(CountryModel country)
         {
             _adminService.AddOrUpdateCountry(country); 
@@ -209,11 +211,11 @@ namespace Country_Store.Controllers
         }
 
         [HttpGet]
-        [Route("admin/country/delete/{id}")]
+        [Route("country/delete/{id}")]
         public IActionResult DeleteCountry(int id)
         {
             _adminService.DeleteCountry(id);
-            TempData["Message"] = "Country deleted successfully.";
+            TempData["Error"] = "Country deleted successfully.";
             return RedirectToAction("Index");
         }
         #endregion
@@ -222,7 +224,7 @@ namespace Country_Store.Controllers
 
         #region State
         [HttpGet]
-        [Route("admin/state/get/{id?}")]
+        [Route("state/get/{id?}")]
 
 
         public IActionResult GetStateByID(int? id)
@@ -236,7 +238,7 @@ namespace Country_Store.Controllers
 
 
         [HttpPost]
-        [Route("admin/state/add")]
+        [Route("state/add")]
 
 
         public IActionResult AddOrEditState(StateModel model)
@@ -249,13 +251,13 @@ namespace Country_Store.Controllers
         }
 
         [HttpGet]
-        [Route("admin/state/delete/{id}")]
+        [Route("state/delete/{id}")]
 
         public IActionResult DeleteState(int id)
         {
            
                 _adminService.DeleteState(id);
-                TempData["Message"] = "State deleted successfully.";
+                TempData["Error"] = "State deleted successfully.";
             
                 return RedirectToAction("Index");
         }
@@ -266,7 +268,7 @@ namespace Country_Store.Controllers
         #region City
 
         [HttpGet]
-        [Route("admin/city/get/{id?}")]
+        [Route("city/get/{id?}")]
 
 
         public IActionResult GetIdByCity(int? id)
@@ -291,7 +293,7 @@ namespace Country_Store.Controllers
         }
 
         [HttpPost]
-        [Route("admin/city/add")]
+        [Route("city/add")]
         public IActionResult AddOrEditCity(CityModel model)
         {
             _adminService.AddOrUpdateCity(model);
@@ -302,13 +304,13 @@ namespace Country_Store.Controllers
         }
 
         [HttpGet]
-        [Route("admin/city/delete/{id}")]
+        [Route("city/delete/{id}")]
 
         public IActionResult DeleteCity(int id)
         {
            
                 _adminService.DeleteCity(id);
-                TempData["Message"] = "City deleted successfully.";
+                TempData["Error"] = "City deleted successfully.";
                     
                  return RedirectToAction("Index");
         }
@@ -319,13 +321,26 @@ namespace Country_Store.Controllers
 
         #region Store
 
+        public IActionResult Store(int page = 1, int pageSize = 5, string search = "")
+        {
+            var result = _adminService.GetPagedStores(page, pageSize,search);
+            return View(result); 
+        }
+
+
         // GET: /Store/AddOrEdit/5 or /Store/AddOrEdit
         [HttpGet]
-        [Route("admin/city/get/{id?}")]
+        [Route("store/get/{id?}")]
 
         public IActionResult GetStoreById(int? id)
         {
+            if (id == null || id == 0)
+                return PartialView("Partials/_StoreForm", new StoreModel());
+
             var model = _adminService.GetStoreById(id.Value);
+
+            Console.WriteLine("Address from DB: " + model.Address);
+
 
             ViewBag.CountryList = new SelectList(_adminService.GetCountriesDropDown(), "Value", "Text", model.CountryId);
             ViewBag.StateList = new SelectList(_adminService.GetStatesByCountryId(model.CountryId), "Value", "Text", model.StateId);
@@ -337,13 +352,15 @@ namespace Country_Store.Controllers
 
         // POST: /Store/AddOrEdit
         [HttpPost]
-        [Route("admin/city/add")]
+        [Route("store/add")]
         public IActionResult AddOrEditStore(StoreModel model)
         {
             bool isEdit = model.StoreId > 0;
 
          
             _adminService.AddOrUpdateStore(model);
+            Console.WriteLine("Controller Address = " + model.Address);
+
             TempData["Message"] = isEdit ? "Store updated successfully!" : "Store added successfully!";
 
             
@@ -354,11 +371,11 @@ namespace Country_Store.Controllers
 
         // GET: /Store/Delete/5
         [HttpGet]
-        [Route("admin/city/delete/{id}")]
+        [Route("store/delete/{id}")]
         public IActionResult DeleteStore(int id)
         {
             _adminService.DeleteStore(id);
-            TempData["Message"] = "Store deleted successfully!";
+            TempData["Error"] = "Store deleted successfully!";
             return RedirectToAction("Index","Admin");
         }
         #endregion

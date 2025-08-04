@@ -8,6 +8,8 @@ namespace Country_Store.Services.User
         void AddOrEditUser(UserModel model);
         void DeleteUser(int id);
         List<UserModel> GetAllUsers();
+        PagedResult<UserModel> GetPagedUsers(int page, int pageSize, string searchTerm);
+
 
     }
 

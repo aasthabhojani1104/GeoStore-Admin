@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Country_Store.Models.StoreModel>
+﻿@model Country_Store.Models.PagedResult<Country_Store.Models.StoreModel>
 
 @{
     ViewBag.Title = "Store List";
@@ -14,67 +14,134 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-12">
+            <!-- Header + Search -->
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="text-primary">Store List</h2>
-               @*  <a asp-action="AddOrEdit" class="btn btn-success">
-                    <i class="bi bi-plus-lg"></i> Add New Store
-                </a> *@
+                <h2 class="text-primary">🏪 Store List</h2>
+
+                <div class="input-group w-50">
+                    <input type="text" id="storeSearch" value="@ViewBag.Search" class="form-control form-control-sm" placeholder="🔍 Search stores..." />
+                   
+                </div>
             </div>
 
-            <table class="table table-bordered table-striped table-hover shadow-sm">
-                <thead class="table-primary text-center">
-                    <tr>
-                        <th>#</th>
-                        <th>Store Name</th>
-                        <th>Opening Time</th>
-                        <th>Closing Time</th>
-                        <th>Country</th>
-                        <th>State</th>
-                        <th>City</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (Model != null && Model.Any())
-                    {
-                        int i = 1;
-                        foreach (var item in Model)
+            <div id="storeListContainer">
+                <!-- Table -->
+                <table class="table table-bordered table-striped table-hover shadow-sm">
+                    <thead class="table-primary text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Store Name</th>
+                            <th>Opening Time</th>
+                            <th>Closing Time</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>City</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Items.Any())
+                        {
+                            int i = (Model.CurrentPage - 1) * Model.PageSize + 1;
+                            foreach (var item in Model.Items)
+                            {
+                                <tr>
+                                    <td class="text-center">@i</td>
+                                    <td>@item.StoreName</td>
+                                    <td>@item.OpeningTime</td>
+                                    <td>@item.ClosingTime</td>
+                                    <td>@item.CountryName</td>
+                                    <td>@item.StateName</td>
+                                    <td>@item.CityName</td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
                         {
                             <tr>
-                                <td class="text-center">@i</td>
-                                <td>@item.StoreName</td>
-                                <td>@item.OpeningTime</td>
-                                <td>@item.ClosingTime</td>
-                                <td>@item.CountryName</td>
-                                <td>@item.StateName</td>
-                                <td>@item.CityName</td>
-                              @*   <td class="text-center">
-                                    <a asp-action="AddOrEdit" asp-route-id="@item.StoreId" class="btn btn-sm btn-primary me-2">
-                                        <i class="bi bi-pencil-square"></i> Edit
-                                    </a>
-                                    <a asp-action="Delete" asp-route-id="@item.StoreId" class="btn btn-sm btn-danger"
-                                       onclick="return confirm('Are you sure you want to delete this store?');">
-                                        <i class="bi bi-trash3"></i> Delete
-                                    </a>
-                                </td> *@
+                                <td colspan="7" class="text-center text-muted">No stores found.</td>
                             </tr>
-                            i++;
                         }
-                    }
-                    else
-                    {
-                        <tr>
-                            <td colspan="8" class="text-center text-muted">No stores found.</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+
+                <!-- Pagination -->
+                @if (Model.TotalPages > 1)
+                {
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <a class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == 1 ? "disabled" : "")"
+                           href="@Url.Action("List", "Store", new { page = Model.CurrentPage - 1, search = ViewBag.Search })">
+                            ⬅️ Previous
+                        </a>
+
+                        <nav>
+                            <ul class="pagination pagination-sm mb-0">
+                                @for (int p = 1; p <= Model.TotalPages; p++)
+                                {
+                                    <li class="page-item @(p == Model.CurrentPage ? "active" : "")">
+                                        <a class="page-link" href="@Url.Action("List", "Store", new { page = p, search = ViewBag.Search })">@p</a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+
+                        <a class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")"
+                           href="@Url.Action("List", "Store", new { page = Model.CurrentPage + 1, search = ViewBag.Search })">
+                            Next ➡️
+                        </a>
+                    </div>
+                }
+
+                <div class="text-end text-muted mt-2">
+                    Showing page @Model.CurrentPage of @Model.TotalPages | Total stores: <strong>@Model.TotalItems</strong>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
     <script>
+        let typingTimer;
+        const debounceDelay = 300;
+
+        $(document).ready(function () {
+            $(document).on('keyup', '#storeSearch', function () {
+                clearTimeout(typingTimer);
+                const searchValue = $(this).val();
+
+                typingTimer = setTimeout(() => {
+                    $.get("/Store/List", { page: 1, search: searchValue }, function (html) {
+                        $('#storeListContainer').html($(html).find('#storeListContainer').html());
+                    });
+                }, debounceDelay);
+            });
+
+            $(document).on('click', '.pagination .page-link', function (e) {
+                e.preventDefault();
+                const url = $(this).attr('href');
+                if (url) {
+                    $.get(url, function (html) {
+                        $('#storeListContainer').html($(html).find('#storeListContainer').html());
+                    });
+                }
+            });
+        });
+
+        function searchStore() {
+            const search = document.getElementById("storeSearch").value;
+            $.get("/Store/List", { page: 1, search }, function (html) {
+                $('#storeListContainer').html($(html).find('#storeListContainer').html());
+            });
+        }
+
+        function cancelStoreSearch() {
+            document.getElementById("storeSearch").value = "";
+            $.get("/Store/List", { page: 1 }, function (html) {
+                $('#storeListContainer').html($(html).find('#storeListContainer').html());
+            });
+        }
+
         setTimeout(function () {
             var msg = document.getElementById("tempMessage");
             if (msg) {
@@ -85,4 +152,3 @@
         }, 3000);
     </script>
 }
-

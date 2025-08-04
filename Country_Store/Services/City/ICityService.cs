@@ -8,7 +8,9 @@ namespace Country_Store.Services.City
     public interface ICityService
     {
         List<CityModel> GetAll();
-       
+        PagedResult<CityModel> GetPagedCities(int page, int pageSize,string searchTearm);
+
+
     }
 
 }

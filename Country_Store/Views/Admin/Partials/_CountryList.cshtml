@@ -1,4 +1,9 @@
-﻿@model IEnumerable<Country_Store.Models.CountryModel>
+﻿@model Country_Store.Models.PagedResult<Country_Store.Models.CountryModel>
+
+
+
+
+
 @if (TempData["Message"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show mt-2 text-center"
@@ -9,16 +14,17 @@
     </div>
 }
 
-
-
-
 <div class="container mt-4">
     <div class="card shadow border-0">
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="text-primary mb-0">🌍 Country List</h3>
+            </div>
 
-               
+            <!-- 🔍 Search Bar -->
+            <div class="input-group mb-3">
+                <input type="text" id="countrySearch" class="form-control" placeholder="🔍 Search countries..." value="@ViewBag.Search" />
+             
             </div>
 
             <div class="table-responsive">
@@ -34,10 +40,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (Model != null && Model.Any())
+                        @if (Model != null && Model.Items.Any())
                         {
-                            int i = 1;
-                            foreach (var item in Model)
+                            int i = (Model.CurrentPage - 1) * Model.PageSize + 1;
+                            foreach (var item in Model.Items)
                             {
                                 <tr>
                                     <td>@i</td>
@@ -53,9 +59,7 @@
                                            onclick="return confirm('Are you sure you want to delete this country?');">
                                             <i class="bi bi-trash"></i>
                                         </a>
-
                                     </td>
-
                                 </tr>
                                 i++;
                             }
@@ -68,18 +72,60 @@
                         }
                     </tbody>
                 </table>
+                <div class="text-end text-muted mb-2">
+                    Showing page @Model.CurrentPage of @Model.TotalPages | Total countries: <strong>@Model.TotalItems</strong>
+                </div>
             </div>
         </div>
+
+        <!-- ✅ Pagination Footer -->
+        @if (Model.TotalPages > 1)
+        {
+            <div class="card-footer bg-white border-0">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- ◀️ Previous Button -->
+                    <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == 1 ? "disabled" : "")"
+                            onclick="loadCountryPage(@(Model.CurrentPage - 1))">
+                        ⬅️ Previous
+                    </button>
+
+                    <!-- Page Numbers -->
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            @for (int p = 1; p <= Model.TotalPages; p++)
+                            {
+                                <li class="page-item @(p == Model.CurrentPage ? "active" : "")">
+                                    <a class="page-link" href="javascript:void(0);" onclick="loadCountryPage(@p)">
+                                        @p
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+
+                    <!-- ▶️ Next Button -->
+                    <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")"
+                            onclick="loadCountryPage(@(Model.CurrentPage + 1))">
+                        Next ➡️
+                    </button>
+                </div>
+            </div>
+        }
     </div>
 </div>
 
+
+
+
+
 @section Scripts {
     <script>
+        // Auto fade out message
         setTimeout(() => {
-            const message = document.getElementById("tempMessage");
-            if (message) message.style.display = "none";
-        }, 3000); // 3 seconds
-    </script>
+            const msg = document.getElementById("tempMessage");
+            if (msg) msg.style.display = "none";
+        }, 3000);
 
+       
+    </script>
 }
-    

@@ -1,12 +1,5 @@
-﻿@model IEnumerable<Country_Store.Models.CityModel>
+﻿@model PagedResult<Country_Store.Models.CityModel>
 
-@if (TempData["Message"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show mt-2 text-center" id="tempMessage" role="alert">
-        @TempData["Message"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-}
 
 
 <div class="container mt-4">
@@ -14,6 +7,10 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="text-primary mb-0">🏙️ City List</h3>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" id="citySearch" class="form-control" placeholder="🔍 Search cities..." value="@ViewBag.Search" />
+            
             </div>
 
             <div class="table-responsive">
@@ -25,14 +22,15 @@
                             <th>Pin Code</th>
                             <th>Population</th>
                             <th>State</th>
+                           
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if (Model != null && Model.Any())
+                        @if (Model != null && Model.Items.Any())
                         {
-                            int i = 1;
-                            foreach (var item in Model)
+                            int i = (Model.CurrentPage - 1) * Model.PageSize + 1;
+                            foreach (var item in Model.Items)
                             {
                                 <tr>
                                     <td>@i</td>
@@ -40,6 +38,7 @@
                                     <td>@item.PinCode</td>
                                     <td>@item.Population</td>
                                     <td>@item.StateName</td>
+                                
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary me-1" onclick="reloadCityForm(@item.CityId)">
                                             <i class="bi bi-pencil"></i>
@@ -48,9 +47,7 @@
                                            onclick="return confirm('Are you sure you want to delete this city?');">
                                             <i class="bi bi-trash"></i>
                                         </a>
-
                                     </td>
-
                                 </tr>
                                 i++;
                             }
@@ -58,23 +55,53 @@
                         else
                         {
                             <tr>
-                                <td colspan="6" class="text-muted">No cities found.</td>
+                                <td colspan="7" class="text-muted">No cities found.</td>
                             </tr>
                         }
                     </tbody>
                 </table>
+                <div class="text-end text-muted mb-2">
+                    Showing page @Model.CurrentPage of @Model.TotalPages | Total stores: <strong>@Model.TotalItems</strong>
+                </div>
             </div>
+
+            @if (Model.TotalPages > 1)
+            {
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <!-- ◀️ Previous Button -->
+                    <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == 1 ? "disabled" : "")"
+                            onclick="loadCityPage(@(Model.CurrentPage - 1))">
+                        ⬅️ Previous
+                    </button>
+
+                    <!-- Page Numbers -->
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            @for (int p = 1; p <= Model.TotalPages; p++)
+                            {
+                                <li class="page-item @(p == Model.CurrentPage ? "active" : "")">
+                                    <a class="page-link" href="javascript:void(0);" onclick="loadCityPage(@p)">
+                                        @p
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+
+                    <!-- ▶️ Next Button -->
+                    <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")"
+                            onclick="loadCityPage(@(Model.CurrentPage + 1))">
+                        Next ➡️
+                    </button>
+                </div>
+            }
+
         </div>
     </div>
 </div>
 
 @section Scripts {
     <script>
-        setTimeout(() => {
-            const message = document.getElementById("tempMessage");
-            if (message) message.style.display = "none";
-        }, 3000); // 3 seconds
+        
     </script>
-
-
 }

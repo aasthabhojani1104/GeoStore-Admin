@@ -17,18 +17,14 @@ namespace Country_Store.Controllers
         }
 
         // GET: /Store/List
-        public IActionResult List()
+        public IActionResult List(int page = 1,string search="")
         {
-            var stores = _storeService.GetAllStores();
-            return View(stores);
+            int pageSize = 10;
+            var result = _storeService.GetPagedStores(page, pageSize,search);
+            ViewBag.Search = search;
+            return View(result);
         }
 
-        
-
-
        
-
-
-
     }
 }

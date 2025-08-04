@@ -7,10 +7,18 @@ namespace Country_Store.Services.Admin
 {
     public interface IAdminService
     {
+        PagedResult<StoreModel> GetPagedStores(int page, int pageSize, string searchTerm);
+        PagedResult<CountryModel> GetPagedCountries(int page, int pageSize,string searchTerm);
+        PagedResult<StateModel> GetPagedStates(int page, int pageSize,string searchTerm);
+        PagedResult<CityModel> GetPagedCities(int page, int pageSize,string searchTearm);
+
+
+
         #region Country
 
         // In IAdminService.cs
-        List<CountryModel> GetAllCountries();         
+        List<CountryModel> GetAllCountries();
+
         List<SelectListItem> GetCountriesDropDown();           // for dropdowns
         CountryModel GetCountryById(int id);
         void AddOrUpdateCountry(CountryModel model);

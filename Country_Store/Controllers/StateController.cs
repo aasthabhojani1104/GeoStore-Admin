@@ -19,13 +19,16 @@ namespace Country_Store.Controllers
             _countryService = countryService;
         }
 
-        public IActionResult List()
+
+        public IActionResult List(int page = 1, string search = null)
         {
-            var states = _stateService.GetAll();
-            return View(states);
+            int pageSize = 10;
+            var data = _stateService.GetPagedStates(page, pageSize, search);
+            ViewBag.Search = search;
+            return View(data);
         }
-        
-      
+
+
 
     }
 }

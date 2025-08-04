@@ -21,7 +21,7 @@ namespace Country_Store.Controllers
         [HttpGet("Home/AccessDenied")]
         public IActionResult AccessDenied()
         {
-            return View(); // Make sure AccessDenied.cshtml exists in Views/Home
+            return View();
         }
         public IActionResult Privacy()
         {

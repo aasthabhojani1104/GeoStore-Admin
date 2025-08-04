@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Linq;
 
-namespace Country_Store.Attributes // Use your project namespace
+namespace Country_Store.Attributes
 {
     public class PermissionAuthorizeAttribute : Attribute, IAuthorizationFilter
     {

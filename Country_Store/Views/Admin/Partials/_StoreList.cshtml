@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Country_Store.Models.StoreModel>
+﻿@model Country_Store.Models.PagedResult<Country_Store.Models.StoreModel>
 
 @if (TempData["Message"] != null)
 {
@@ -13,8 +13,12 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="text-primary mb-0">🏪 Store List</h3>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" id="storeSearch" class="form-control" placeholder="🔍 Search stores..." value="@ViewBag.Search" />
                
             </div>
+
 
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center align-middle shadow-sm">
@@ -27,14 +31,15 @@
                             <th>Country</th>
                             <th>State</th>
                             <th>City</th>
+                            <th>Address</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if (Model != null && Model.Any())
+                        @if (Model != null && Model.Items.Any())
                         {
-                            int i = 1;
-                            foreach (var item in Model)
+                            int i = (Model.CurrentPage - 1) * Model.PageSize + 1;
+                            foreach (var item in Model.Items)
                             {
                                 <tr>
                                     <td>@i</td>
@@ -44,8 +49,8 @@
                                     <td>@item.CountryName</td>
                                     <td>@item.StateName</td>
                                     <td>@item.CityName</td>
+                                    <td>@item.Address</td>
                                     <td>
-                                       
                                         <button type="button" class="btn btn-sm btn-outline-primary me-1" onclick="reloadStoreForm(@item.StoreId)" title="Edit">
                                             <i class="bi bi-pencil-square"></i>
                                         </button>
@@ -54,9 +59,13 @@
                                            onclick="return confirm('Are you sure you want to delete this store?');">
                                             <i class="bi bi-trash"></i>
                                         </a>
-
+                                        <a href="https://www.google.com/maps?q=@Uri.EscapeDataString(item.Address)"
+                                           target="_blank"
+                                           class="btn btn-sm btn-outline-success mt-1"
+                                           title="View on Map">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
                                     </td>
-
                                 </tr>
                                 i++;
                             }
@@ -64,23 +73,54 @@
                         else
                         {
                             <tr>
-                                <td colspan="8" class="text-muted">No stores found.</td>
+                                <td colspan="9" class="text-muted">No stores found.</td>
                             </tr>
                         }
                     </tbody>
                 </table>
+                <div class="text-end text-muted mb-2">
+                    Showing page @Model.CurrentPage of @Model.TotalPages | Total stores: <strong>@Model.TotalItems</strong>
+                </div>
+
             </div>
-        </div>
+
+@if (Model.TotalPages > 1)
+{
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <!-- ◀️ Previous Button -->
+        <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == 1 ? "disabled" : "")"
+                onclick="loadStorePage(@(Model.CurrentPage - 1))">
+            ⬅️ Previous
+        </button>
+
+        <!-- Page Numbers -->
+        <nav>
+            <ul class="pagination pagination-sm mb-0">
+                @for (int p = 1; p <= Model.TotalPages; p++)
+                {
+                    <li class="page-item @(p == Model.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="javascript:void(0);" onclick="loadStorePage(@p)">
+                            @p
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+
+        <!-- ▶️ Next Button -->
+        <button class="btn btn-outline-secondary btn-sm @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")"
+                onclick="loadStorePage(@(Model.CurrentPage + 1))">
+            Next ➡️
+        </button>
     </div>
-</div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-    <script>
-        setTimeout(() => {
-            const message = document.getElementById("tempMessage");
-            if (message) message.style.display = "none";
-        }, 3000); // 3 seconds
-    </script>
-
 }
+
+            <script>
+                window.loadStorePage = function (page) {
+                    $.get("/admin/loadlist/store?page=" + page, function (html) {
+                        $('#listArea').html(html); 
+                    });
+                };
+            </script>
+
+
