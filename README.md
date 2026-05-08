@@ -130,10 +130,10 @@ Attributes   → Custom authorization
 
 
 </p>
-
+### 📋 All Lists Overview
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/52c90677-2bf2-4812-878a-1b7833090b4b" width="700"/>
+  <img src="https://github.com/user-attachments/assets/52c90677-2bf2-4812-878a-1b7833090b4b" width="959" height="451"/>
 </p>
 
 <p align="center">
