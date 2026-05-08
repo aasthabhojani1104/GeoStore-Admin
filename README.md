@@ -126,7 +126,8 @@ Attributes   → Custom authorization
 ### 📍 Real Location (Google Maps)
 
 <p align="center">
- <img width="583" height="301" alt="image" src="https://github.com/user-attachments/assets/d50268a4-b9e3-4eea-bb65-5d274c79cc3c" />
+<img width="959" height="451" alt="image" src="https://github.com/user-attachments/assets/eb6c838c-7630-42df-88c6-43aa97da533f" />
+
 
 </p>
 
@@ -134,20 +135,21 @@ Attributes   → Custom authorization
 
 ### 📋 All Lists Overview
 
-#### 🌍 Country List
+### 📋 All Lists Overview
+
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/52c90677-2bf2-4812-878a-1b7833090b4b" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/0c2ab67e-7e76-451c-84f4-857a6dbfc313" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/52c90677-2bf2-4812-878a-1b7833090b4b" height="250"/>
+  <img src="https://github.com/user-attachments/assets/0c2ab67e-7e76-451c-84f4-857a6dbfc313" height="250"/>
 </p>
 
 ---
 
-#### 🧾 Other Lists
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b7cffdf3-3f53-47c6-bfbe-045eefdc6d7a" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/e2ee78d3-c642-45a3-8299-ffee457ff123" width="45%"/>
-</p>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b7cffdf3-3f53-47c6-bfbe-045eefdc6d7a" height="250"/>
+  <img src="https://github.com/user-attachments/assets/e2ee78d3-c642-45a3-8299-ffee457ff123" height="250"/>
+</p>
 
 ## ⚙️ Setup Guide
 
