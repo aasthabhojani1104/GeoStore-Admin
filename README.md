@@ -156,7 +156,7 @@ Attributes   → Custom authorization
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/Country_Store.git
+git clone https://github.com/aasthabhojani1104/Country_Store.git
 ```
 
 ### 2️⃣ Open in Visual Studio
