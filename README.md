@@ -138,17 +138,26 @@ Attributes   → Custom authorization
 ### 📋 All Lists Overview
 
 
+### 📋 All Lists Overview
+
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/52c90677-2bf2-4812-878a-1b7833090b4b" height="250"/>
-  <img src="https://github.com/user-attachments/assets/0c2ab67e-7e76-451c-84f4-857a6dbfc313" height="250"/>
+  <img src="https://github.com/user-attachments/assets/52c90677-2bf2-4812-878a-1b7833090b4b" width="700"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0c2ab67e-7e76-451c-84f4-857a6dbfc313" width="900"/>
 </p>
 
 ---
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b7cffdf3-3f53-47c6-bfbe-045eefdc6d7a" height="250"/>
-  <img src="https://github.com/user-attachments/assets/e2ee78d3-c642-45a3-8299-ffee457ff123" height="250"/>
+  <img src="https://github.com/user-attachments/assets/b7cffdf3-3f53-47c6-bfbe-045eefdc6d7a" width="900"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e2ee78d3-c642-45a3-8299-ffee457ff123" width="900"/>
 </p>
 
 ## ⚙️ Setup Guide
