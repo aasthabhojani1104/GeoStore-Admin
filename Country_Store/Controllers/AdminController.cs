@@ -19,7 +19,6 @@ using Country_Store.Attributes;
 namespace Country_Store.Controllers
 {
     [Route("admin")]
-   
     public class AdminController : BaseController
     {
         private readonly IAdminService _adminService;

@@ -19,7 +19,7 @@ namespace Country_Store.Controllers
 
         public IActionResult List(int page = 1, string search = null)
         {
-            int pageSize = 10; // or any default
+            int pageSize = 10; 
             var result = _countryService.GetPagedCountries(page, pageSize, search);
             ViewBag.Search = search;
             ViewBag.CurrentPage=page;

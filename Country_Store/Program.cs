@@ -12,10 +12,8 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MVC support
 builder.Services.AddControllersWithViews();
 
-// Add session
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
