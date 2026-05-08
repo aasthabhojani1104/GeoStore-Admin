@@ -92,43 +92,54 @@ Attributes   → Custom authorization
 
 ## 📸 Screenshots
 
-### 🖥️ Admin Dashboard
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/3f1a5e26-a20c-4be2-8761-fcbf5e390d7c" width="800"/>
-</p>
-
+### 🖥️ Admin Pannel
 ### 🌍 Country Management
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/da7aa99b-91bd-491d-b614-9e5fd95d65fe" width="800"/>
+ <img width="959" height="452" alt="image" src="https://github.com/user-attachments/assets/4ebc8488-434d-4485-b9c9-2ed09702e37f" />
+
 </p>
+
+
 
 ### 🏙️ State Management
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/83859ba0-776a-4e06-9f67-3e2b5030c061" width="800"/>
+ <img width="959" height="406" alt="image" src="https://github.com/user-attachments/assets/69f2f817-d5f6-4ca7-8a7d-2bfaa35711e2" />
+
 </p>
 
 ### 🏙️ City Management
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8b313266-4daa-4b92-ba70-7873dd05c26b" width="800"/>
+ <img width="959" height="423" alt="image" src="https://github.com/user-attachments/assets/53e76f4c-d7df-4060-847e-f334d10237d1" />
+
 </p>
 
 ### 🏪 Store Management + Maps
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/455add3d-a5be-4041-8494-8252e92d71a6" width="800"/>
+ <img width="959" height="452" alt="image" src="https://github.com/user-attachments/assets/218354e4-f17b-498b-8cf6-0bea09705f3f" />
+
 </p>
 
 ### 📍 Real Location (Google Maps)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/48ef8c38-9bce-41d8-a923-49faa0426ceb" width="800"/>
+ <img width="583" height="301" alt="image" src="https://github.com/user-attachments/assets/d50268a4-b9e3-4eea-bb65-5d274c79cc3c" />
+
 </p>
 
 ---
+
+### all the list 
+country 
+<img width="542" height="284" alt="image" src="https://github.com/user-attachments/assets/52c90677-2bf2-4812-878a-1b7833090b4b" />
+
+<img width="958" height="337" alt="image" src="https://github.com/user-attachments/assets/0c2ab67e-7e76-451c-84f4-857a6dbfc313" />
+<img width="959" height="314" alt="image" src="https://github.com/user-attachments/assets/b7cffdf3-3f53-47c6-bfbe-045eefdc6d7a" />
+<img width="959" height="451" alt="image" src="https://github.com/user-attachments/assets/e2ee78d3-c642-45a3-8299-ffee457ff123" />
+
 
 ## ⚙️ Setup Guide
 
